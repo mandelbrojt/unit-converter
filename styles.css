@@ -1,4 +1,93 @@
+/* ---------- Elements ---------- */
 body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     text-align: center;
     font-family: 'Inter', sans-serif;
+}
+
+header {
+    background-color: #6943FF;
+    color: #FFFFFF;
+    width: 550px;
+    height: 285px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+footer {
+    background-color: #F4F4F4;
+    width: 550px;
+    height: auto;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ---------- Classes ---------- */
+.card {
+    background-color: #FFFFFF;
+    width: 500px;
+    border-radius: 5px;
+    margin-top: 30px;
+}
+
+.card-title {
+    font-weight: 600;
+    font-size: 20px;
+    color: #5A537B;
+    margin-top: 30px;
+}
+.card-description {
+    font-weight: 400;
+    font-size: 14px;
+    color: #353535;
+    margin-top: 0px;
+    margin-bottom: 20px;
+}
+
+/* ---------- Identificators ---------- */
+#input-number {
+    background-color: transparent;
+    color: #FFFFFF;
+    width: 117px;
+    height: 83px;
+    border: 2px solid #B295FF;
+    border-radius: 5px;
+    margin-bottom: 25px;
+    text-align: center;
+    font-weight: 800;
+    font-size: 58px;
+}
+
+#conversion-button {
+    width: 117px;
+    height: 42px;
+    background-color: #FFFFFF;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    font-weight: 500;
+    font-size: 16px;
+}
+
+#conversion-button:hover {
+    cursor: pointer;
+    border: 1px solid #000000;
+    box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.5);
+}
+
+#conversion-button:active {
+    transform: scale(0.9);
+    transition: transform 0.2s ease;
+}
+
+#mass-card {
+    margin-bottom: 30px;
 }
