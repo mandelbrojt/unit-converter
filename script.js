@@ -1,24 +1,40 @@
-const meterToFeet = 3.281
-const literToGallon = 0.264
-const kilogramToPound = 2.204
+/*
+Changes made from last commit:
+1. Grouped conversion factors into a single object for better organization and readability.
+2. Grouped DOM elements into a single object for better organization and readability.
+3. Added comments for better understanding of the code.
+*/
 
-const conversionButton = document.getElementById("conversion-button")
-const inputElement = document.getElementById("input-number")
+// Constants for unit conversion
+const CONVERSION_FACTORS = {
+    meterToFeet: 3.281,
+    literToGallon: 0.264,
+    kilogramToPound: 2.204
+}
 
-const lengthDescription = document.getElementById("length-desc")
-const volumeDescription = document.getElementById("volume-desc")
-const massDescription = document.getElementById("mass-desc")
+// DOM elements
+const DOM_ELEMENTS = {
+    conversionButton: document.getElementById("conversion-button"),
+    inputElement: document.getElementById("input-number"),
+    lengthDescription: document.getElementById("length-desc"),
+    volumeDescription: document.getElementById("volume-desc"),
+    massDescription: document.getElementById("mass-desc")
+}
 
+// Function to convert units
 function convertUnits() {
-    renderUnits(inputElement.value)
+    renderUnits(DOM_ELEMENTS.inputElement.value)
 }
 
+// Function to render units
 function renderUnits(inputNum) {
-    lengthDescription.textContent = `${inputNum} meter(s) = ${(inputNum * meterToFeet).toFixed(3)} feet | ${inputNum} feet = ${(inputNum / meterToFeet).toFixed(3)} meter(s)`
-    volumeDescription.textContent = `${inputNum} liter(s) = ${(inputNum * literToGallon).toFixed(3)} gallon(s) | ${inputNum} gallon(s) = ${(inputNum / literToGallon).toFixed(3)} liter(s)`
-    massDescription.textContent = `${inputNum} kilogram(s) = ${(inputNum * kilogramToPound).toFixed(3)} pound(s) | ${inputNum} pound(s) = ${(inputNum / kilogramToPound).toFixed(3)} kilogram(s)`
+    DOM_ELEMENTS.lengthDescription.textContent = `${inputNum} meter(s) = ${(inputNum * CONVERSION_FACTORS.meterToFeet).toFixed(3)} feet | ${inputNum} feet = ${(inputNum / CONVERSION_FACTORS.meterToFeet).toFixed(3)} meter(s)`
+    DOM_ELEMENTS.volumeDescription.textContent = `${inputNum} liter(s) = ${(inputNum * CONVERSION_FACTORS.literToGallon).toFixed(3)} gallon(s) | ${inputNum} gallon(s) = ${(inputNum / CONVERSION_FACTORS.literToGallon).toFixed(3)} liter(s)`
+    DOM_ELEMENTS.massDescription.textContent = `${inputNum} kilogram(s) = ${(inputNum * CONVERSION_FACTORS.kilogramToPound).toFixed(3)} pound(s) | ${inputNum} pound(s) = ${(inputNum / CONVERSION_FACTORS.kilogramToPound).toFixed(3)} kilogram(s)`
 }
 
-renderUnits(inputElement.value)
+// Initial render
+renderUnits(DOM_ELEMENTS.inputElement.value)
 
-conversionButton.addEventListener("click", convertUnits)
+// Event listener for conversion button
+DOM_ELEMENTS.conversionButton.addEventListener("click", convertUnits)
